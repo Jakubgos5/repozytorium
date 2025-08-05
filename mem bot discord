@@ -27,4 +27,4 @@ async def mem(ctx):
 
 
 
-bot.run(''token")
+bot.run("token")
