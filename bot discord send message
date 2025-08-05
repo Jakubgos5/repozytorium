@@ -1,3 +1,13 @@
+import discord
+
+intents = discord.Intents.default()
+intents.message_content = True  # Optional, only if your bot needs access to message content
+client = discord.Client(intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Zalogowano jako {bot.user}')
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -8,3 +18,4 @@ async def on_message(message):
         await message.channel.send("\U0001f642")
     else:
         await message.channel.send(message.content)
+bot.run("token")
